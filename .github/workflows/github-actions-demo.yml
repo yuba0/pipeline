@@ -8,3 +8,7 @@ jobs:
       - run: echo " The job was automatically triggered by a ${{ github.event_name }} event."
       - run: python3 job.py
       - run: echo "Résultat du job $(date)" > output.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mon-artefact
+          path: output.txt
